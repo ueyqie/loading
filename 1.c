@@ -1,30 +1,22 @@
-#include<stdio.h>
-#include<stdlib.h>
-void main()
+#include <stdio.h>
+int main(void)
 {
-	int a[10] = {5,1,6,9,8,3,4,6,10,7};;
+	float nian;
+	double sui;
+	double miao;
+	printf("输入你的年龄:\n");
+	scanf("%f",&nian);
 	
+	printf("输入参数:\n");
+	scanf("%e",&sui);
 
-	int temp= 0;
-
+	miao=wait(nian,sui);
 	
-	for(int i=0;i<10;i++) 
-	{
-		for(int j=i+1;j<10;j++)
-		{
-			if(a[i] > a[j]) 
-			{
-				temp = a[i];
-				a[i] = a[j];
-				a[j] = temp;
-			}
-		}
-	}
-
-	for(int i=0;i<10;i++) 
-	{
-		printf("%d  ",a[i]);
-	}
-
-	system("pause");
-} 
+	printf("我活了%e秒",miao);
+	return 0;
+}
+double wait(float nian,double sui)
+{
+	double miao =nian*sui;
+	return miao;
+}
